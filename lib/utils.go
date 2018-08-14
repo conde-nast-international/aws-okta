@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/segmentio/aws-okta/lib/saml"
+	"github.com/tomgco/aws-okta/lib/saml"
 	"golang.org/x/net/html"
 )
 
