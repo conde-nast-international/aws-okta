@@ -24,7 +24,7 @@ import (
 )
 
 const (
-	OktaServer = "okta.com"
+	OktaServer = "okta-emea.com"
 )
 
 type OktaClient struct {
