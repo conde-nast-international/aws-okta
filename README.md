@@ -7,7 +7,7 @@
 If you have a functional go environment, you can install with:
 
 ```bash
-$ go get github.com/segmentio/aws-okta
+$ go get github.com/tomgco/aws-okta
 ```
 
 [See the wiki for more installation options like Linux packages and precompiled binaries.](https://github.com/segmentio/aws-okta/wiki/Installation)
