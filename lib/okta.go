@@ -142,7 +142,8 @@ func (o *OktaClient) AuthenticateProfile(profileARN string, duration time.Durati
 
 	// Attempt to reuse session cookie
 	var assertion SAMLAssertion
-	err := o.Get("GET", o.OktaAwsSAMLUrl, nil, &assertion, "saml")
+	o.Organization = "condenast-hub"
+	err := o.Get("GET", "home/amazon_aws/0oa1zis6xpTG0e0oC0i7/272", nil, &assertion, "saml")
 	if err != nil {
 		log.Debug("Failed to reuse session token, starting flow from start")
 
@@ -152,17 +153,22 @@ func (o *OktaClient) AuthenticateProfile(profileARN string, duration time.Durati
 
 		// Step 3 : Get SAML Assertion and retrieve IAM Roles
 		log.Debug("Step: 3")
-		if err = o.Get("GET", o.OktaAwsSAMLUrl+"?onetimetoken="+o.UserAuth.SessionToken,
+		log.Debug("Step: 3a ", o)
+		if err = o.Get("GET", "home/amazon_aws/0oa1zis6xpTG0e0oC0i7/272" + "?sessionToken=" + o.UserAuth.SessionToken,
 			nil, &assertion, "saml"); err != nil {
 			return sts.Credentials{}, "", err
 		}
+		log.Debug("Step: 3b")
 	}
+
+	log.Debug(o.OktaAwsSAMLUrl)
 
 	principal, role, err := GetRoleFromSAML(assertion.Resp, profileARN)
 	if err != nil {
 		return sts.Credentials{}, "", err
 	}
 
+	log.Debug("Step: 4")
 	// Step 4 : Assume Role with SAML
 	samlSess := session.Must(session.NewSession())
 	svc := sts.New(samlSess)
@@ -410,6 +416,11 @@ func (o *OktaClient) Get(method string, path string, data []byte, recv interface
 		ContentLength: int64(len(body)),
 	}
 
+	log.Debug("cookie ", o.CookieJar)
+	log.Debug("url ", url)
+	log.Debug("header ", header)
+	log.Debug("path ", path)
+
 	if res, err = client.Do(req); err != nil {
 		return
 	}
@@ -427,6 +438,8 @@ func (o *OktaClient) Get(method string, path string, data []byte, recv interface
 			if err != nil {
 				return
 			}
+			log.Debug("res", fmt.Sprintf("%s", rawData))
+
 			if err := ParseSAML(rawData, recv.(*SAMLAssertion)); err != nil {
 				return fmt.Errorf("Okta user %s does not have the AWS app added to their account.  Please contact your Okta admin to make sure things are configured properly.", o.Username)
 			}

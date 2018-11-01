@@ -45,7 +45,7 @@ func GetRoleFromSAML(resp *saml.Response, profileARN string) (string, string, er
 		}
 	}
 
-	return "", "", fmt.Errorf("Role '%s' not authorized by Okta.  Contact Okta admin to make sure that the AWS app is configured properly.", profileARN)
+	return "", "", fmt.Errorf("Role '%s' not authorized by Okta.  Contact Okta admin to make sure that the AWS app is configured properly. %s %s", profileARN, resp.Assertion.AttributeStatement.Attributes)
 }
 
 func ParseSAML(body []byte, resp *SAMLAssertion) (err error) {

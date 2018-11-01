@@ -30,14 +30,14 @@ clean:
 	rm -rf ./dist
 
 dist:
-	mkdir dist
+	mkdir -p dist
 	govendor sync
-	GOOS=linux GOARCH=amd64 go build $(LDFLAGS) -o dist/aws-okta-$(VERSION)-linux-amd64
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build $(LDFLAGS) -o dist/aws-okta-$(VERSION)-linux-amd64
 
 dist-mac:
-	mkdir dist
+	mkdir -p dist
 	govendor sync
-	GOOS=darwin GOARCH=amd64 go build $(LDFLAGS) -o dist/aws-okta-$(VERSION)-darwin-amd64
+	CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build $(LDFLAGS) -o dist/aws-okta-$(VERSION)-darwin-amd64
 
 gh-release:
 	go get -u github.com/aktau/github-release
