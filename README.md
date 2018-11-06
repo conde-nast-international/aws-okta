@@ -7,7 +7,7 @@
 If you have a functional go environment, you can install with:
 
 ```bash
-$ go get github.com/tomgco/aws-okta
+$ go get github.com/conde-nast-international/aws-okta
 ```
 
 [See the wiki for more installation options like Linux packages and precompiled binaries.](https://github.com/segmentio/aws-okta/wiki/Installation)
@@ -127,11 +127,12 @@ export AWS_OKTA_BACKEND=secret-service
 
 ## Releasing
 
-Pushing a new tag will cause Circle to automatically create and push a linux release.  After this is done, you should run (from a mac):
-
 ```bash
-$ export CIRCLE_TAG=`git describe --tags`
-$ make release-mac
+$ git tag v0.x.x
+$ git push --tags
+$ export GH_LOGIN=<github personal access code>
+$ make all
+$ make -f Makefile.release publish-github
 ```
 
 ## Analytics
