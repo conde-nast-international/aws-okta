@@ -6,7 +6,7 @@ import (
 
 // These are set via linker flags
 var (
-	Version           = "v0.20.2"
+	Version           = "v0.20.4-conde"
 	AnalyticsWriteKey = ""
 )
 

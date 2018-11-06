@@ -26,7 +26,7 @@ require (
 	github.com/skratchdot/open-golang v0.0.0-20160302144031-75fb7ed4208c
 	github.com/spf13/cobra v0.0.0-20170621173259-31694f19adee
 	github.com/spf13/pflag v1.0.0
-	github.com/conde-nast-international/aws-okta v0.20.2
+	github.com/conde-nast-international/aws-okta v0.20.4-conde
 	github.com/vaughan0/go-ini v0.0.0-20130923145212-a98ad7ee00ec
 	github.com/xtgo/uuid v0.0.0-20140804021211-a0b114877d4c
 	golang.org/x/crypto v0.0.0-20170425182615-5f995c0d1c72
