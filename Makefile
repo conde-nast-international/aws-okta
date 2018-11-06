@@ -28,6 +28,6 @@ dist/aws-okta-$(VERSION)-linux-amd64: | govendor dist/
 	GOOS=linux GOARCH=amd64 go build $(LDFLAGS) -o $@
 
 govendor:
-	go get -u github.com/kardianos/govendor
+	# go get -u github.com/kardianos/govendor
 
 .PHONY: clean all govendor
