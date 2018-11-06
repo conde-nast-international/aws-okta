@@ -10,8 +10,6 @@ If you have a functional go environment, you can install with:
 $ go get github.com/conde-nast-international/aws-okta
 ```
 
-[See the wiki for more installation options like Linux packages and precompiled binaries.](https://github.com/segmentio/aws-okta/wiki/Installation)
-
 ### MacOS
 
 You can install with `brew`:
