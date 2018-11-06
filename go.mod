@@ -1,4 +1,4 @@
-module github.com/tomgco/aws-okta
+module github.com/conde-nast-international/aws-okta
 
 require (
 	github.com/99designs/keyring v0.0.0-20181012025958-ff690aee77e9
@@ -21,10 +21,12 @@ require (
 	github.com/mitchellh/go-homedir v0.0.0-20161203194507-b8bc1bf76747
 	github.com/pkg/errors v0.8.0 // indirect
 	github.com/segmentio/analytics-go v0.0.0-20180319165424-4f08212e9b32
+	github.com/segmentio/aws-okta v0.19.4 // indirect
 	github.com/segmentio/backo-go v0.0.0-20160424052352-204274ad699c
 	github.com/skratchdot/open-golang v0.0.0-20160302144031-75fb7ed4208c
 	github.com/spf13/cobra v0.0.0-20170621173259-31694f19adee
 	github.com/spf13/pflag v1.0.0
+	github.com/conde-nast-international/aws-okta v0.20.2
 	github.com/vaughan0/go-ini v0.0.0-20130923145212-a98ad7ee00ec
 	github.com/xtgo/uuid v0.0.0-20140804021211-a0b114877d4c
 	golang.org/x/crypto v0.0.0-20170425182615-5f995c0d1c72

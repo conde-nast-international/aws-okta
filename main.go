@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/tomgco/aws-okta/cmd"
+	"github.com/conde-nast-international/aws-okta/cmd"
 )
 
 // These are set via linker flags
 var (
-	Version           = "dev"
+	Version           = "v0.20.2"
 	AnalyticsWriteKey = ""
 )
 
