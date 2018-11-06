@@ -10,14 +10,6 @@ If you have a functional go environment, you can install with:
 $ go get github.com/conde-nast-international/aws-okta
 ```
 
-### MacOS
-
-You can install with `brew`:
-
-```bash
-$ brew install aws-okta
-```
-
 ## Usage
 
 ### Adding Okta credentials

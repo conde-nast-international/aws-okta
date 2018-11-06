@@ -4,6 +4,7 @@ package lib
 type OktaUser struct {
 	Username string `json:"username"`
 	Password string `json:"password"`
+	RelayState string `json:"relayState"`
 }
 
 type OktaStateToken struct {
