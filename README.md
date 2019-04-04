@@ -1,5 +1,7 @@
 # aws-okta
 
+DEPRECATED, please use [AWS CLI + Okta Instructions](https://confluence.condenastint.com/pages/viewpage.action?pageId=64260100)
+
 `aws-okta` allows you to authenticate with AWS using your Okta credentials.
 
 ## Installing
